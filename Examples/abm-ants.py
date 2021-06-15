@@ -10,6 +10,7 @@ carrying = 1
 
 garbageProb = 0.8
 
+
 def initialize():
     global time, agents, envir
 
@@ -29,26 +30,32 @@ def initialize():
                 state = 0
             envir[y, x] = state
 
+
 def observe():
     cla()
-    imshow(envir, cmap = cm.YlOrRd, vmin = 0, vmax = 5)
+    imshow(envir, cmap=cm.YlOrRd, vmin=0, vmax=5)
     axis('image')
     x = [ag[0] for ag in agents]
     y = [ag[1] for ag in agents]
     s = [ag[2] for ag in agents]
-    scatter(x, y, c = s, cmap = cm.bwr)
+    scatter(x, y, c=s, cmap=cm.bwr)
     title('t = ' + str(time))
 
+
 def clip(a, amin, amax):
-    if a < amin: return amin
-    elif a > amax: return amax
-    else: return a
+    if a < amin:
+        return amin
+    elif a > amax:
+        return amax
+    else:
+        return a
+
 
 def update():
     global time, agents, envir
 
     time += 1
-    
+
     for ag in agents:
 
         # simulate random motion
@@ -65,5 +72,6 @@ def update():
             else:
                 envir[ag[1], ag[0]] += 1
                 ag[2] = free
+
 
 pycxsimulator.GUI().start(func=[initialize, observe, update])

@@ -1,4 +1,3 @@
-import pycxsimulator
 from pylab import *
 
 n = 1000 # number of particles

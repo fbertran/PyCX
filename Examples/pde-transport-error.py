@@ -1,8 +1,6 @@
 import pycxsimulator
 from pylab import *
 
-from mpl_toolkits.mplot3d import Axes3D
-
 n = 100     # size of grid: n * n
 Dh = 1. / n # spatial resolution, assuming space is [0,1] * [0,1]
 Dt = 0.1   # temporal resolution

@@ -26,3 +26,4 @@ for t in range(100):
 plot(result, 'g--')
 title('r = ' + str(r))
 show()
+
